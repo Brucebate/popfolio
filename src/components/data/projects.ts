@@ -1,3 +1,4 @@
+//src/components/data/projects.ts
 export interface Project {
   id: string;
   title: string;

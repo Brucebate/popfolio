@@ -1,9 +1,10 @@
+//src/pages/page.tsx
 'use client';
 import { useState } from 'react';
-import SplashScreen from './src/components/SplashScreen';
-import Navbar from './src/components/ui/Navbar';
-import HomePage from './src/pages/HomePage';
-import Footer from './src/components/ui/Footer';
+import SplashScreen from '../src/components/SplashScreen';
+import Navbar from '../src/components/ui/Navbar';
+import HomePage from './pages/HomePage';
+import Footer from '../src/components/ui/Footer';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

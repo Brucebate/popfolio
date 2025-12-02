@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Code, Palette, Rocket } from "lucide-react";
-import HeroSection from "../components/ui/HeroComponent";
-import { fadeInUp, staggerContainer, staggerItem } from "../lib/animation";
-import ProjectCard from "../components/ProjectCard";
-import Button from "../components/ui/Button";
-import { projects } from "../components/data/projects";
+import HeroSection from "../../src/components/ui/HeroComponent";
+import { fadeInUp, staggerContainer, staggerItem } from "../../src/lib/animation";
+import ProjectCard from "../../src/components/ProjectCard";
+import Button from "../../src/components/ui/Button";
+import { projects } from "../../src/components/data/projects";
 
 const features = [
     {
@@ -103,10 +103,6 @@ export default function HomePage() {
                                 A selection of my favorite work
                             </p>
                         </div>
-                        <Button href="/projects">
-                            View All Projects
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </Button>
 
                     </motion.div>
 

@@ -217,9 +217,9 @@ export default function ProjectPageClient({ project }: any) {
                             className="mb-8"
                         >
                             <Link
-                                href="/projects"
+                                href="/"
                                 className="inline-flex items-center gap-2 text-[#F7E07D] hover:text-[#F5C859] transition-colors"
-                                onClick={() => router.push("/projects")}
+                                
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 Back to Projects
@@ -247,7 +247,6 @@ export default function ProjectPageClient({ project }: any) {
                                 </p>
                             </motion.div>
 
-                            {/* Right (image) */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -261,7 +260,6 @@ export default function ProjectPageClient({ project }: any) {
                     </div>
                 </section>
 
-                {/* ---------------- FEATURES SECTION ---------------- */}
                 <section className="py-24 bg-[#140e0b]">
                     <div className="container mx-auto px-4">
                         <motion.div
@@ -304,7 +302,7 @@ export default function ProjectPageClient({ project }: any) {
                     </div>
                 </section>
 
-                {/* ---------------- CTA SECTION ---------------- */}
+                {/*  CTA SECTION - */}
                 <section className="py-24 relative overflow-hidden">
                     <motion.div
                         className="absolute inset-0"

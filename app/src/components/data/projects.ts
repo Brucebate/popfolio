@@ -23,6 +23,17 @@ export const projects: Project[] = [
     category: "Web App"
   },
   {
+    id: "raider-debt-collection",
+    title: "Raider",
+    description: "Mobile app for debt collection management.",
+    longDescription: "Raider is a robust mobile application designed for debt collection agencies to streamline their workflows. Built with React Native for cross-platform compatibility and powered by a Node.js/Express.js backend, Raider offers real-time notifications, debtor tracking, and secure data handling.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+    technologies: ["React Native", "Node.js", "Express.js"],
+    liveUrl: "https://example.com/raider",
+    githubUrl: "https://github.com/raider-app",
+    category: "Mobile App"
+  },
+  {
     id: "food-delivery-platform",
     title: "QuickBite",
     description: "Real-time food delivery app with live tracking and restaurant management system.",
@@ -65,17 +76,6 @@ export const projects: Project[] = [
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
     category: "Web App"
-  },
-  {
-    id: "task-management",
-    title: "TaskFlow",
-    description: "Collaborative task management tool with real-time updates and automation.",
-    longDescription: "TaskFlow streamlines team productivity with intuitive task management, real-time collaboration, and powerful automation. Features include Kanban boards, Gantt charts, time tracking, and integrations with popular tools. Smart notifications keep everyone aligned without overwhelming inboxes.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-    technologies: ["React", "GraphQL", "Prisma", "WebSockets"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    category: "SaaS"
   }
 ];
 

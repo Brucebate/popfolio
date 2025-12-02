@@ -117,7 +117,7 @@ export default function HomePage() {
                         whileInView="animate"
                         viewport={{ once: true }}
                     >
-                        {featuredProjects.map((project, index) => (
+                        {projects.map((project, index) => (
                             <motion.div key={project.id} variants={staggerItem}>
                                 <ProjectCard project={project} index={index} />
                             </motion.div>

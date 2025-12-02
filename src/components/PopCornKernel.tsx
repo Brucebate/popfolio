@@ -1,3 +1,4 @@
+// src/components/PopcornKernel.tsx
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 

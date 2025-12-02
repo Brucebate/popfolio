@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import PopcornKernel from "./PopCornKernel";
@@ -21,47 +23,40 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[100] bg-background flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-[#201713] flex flex-col items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative">
-            {/* Popcorn bucket */}
+          <div className="relative text-center">
+            {/* Animated Popcorn Container */}
             <motion.div
-              className="relative"
+              className="relative mb-8"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Bucket SVG */}
-              <svg
-                viewBox="0 0 120 100"
-                className="w-32 h-28"
-                fill="none"
-              >
-                {/* Bucket body */}
-                <path
-                  d="M20 30 L10 95 C10 98 12 100 15 100 L105 100 C108 100 110 98 110 95 L100 30 Z"
-                  fill="hsl(0, 65%, 51%)"
-                />
-                {/* Stripes */}
-                <path d="M30 30 L22 100" stroke="hsl(45, 92%, 62%)" strokeWidth="8" />
-                <path d="M50 30 L44 100" stroke="hsl(45, 92%, 62%)" strokeWidth="8" />
-                <path d="M70 30 L66 100" stroke="hsl(45, 92%, 62%)" strokeWidth="8" />
-                <path d="M90 30 L88 100" stroke="hsl(45, 92%, 62%)" strokeWidth="8" />
-                {/* Rim */}
-                <ellipse cx="60" cy="30" rx="42" ry="8" fill="hsl(0, 65%, 45%)" />
-              </svg>
+              {/* Popcorn Bucket */}
+              <div className="relative w-32 h-32 mx-auto">
+                {/* Bucket Body */}
+                <div className="absolute bottom-0 w-full h-3/4 bg-gradient-to-b from-[#F7E07D] to-[#F5C859] rounded-b-2xl">
+                  <div className="absolute -top-1 w-full h-2 bg-gradient-to-r from-[#F7E07D] to-[#F5C859] rounded-t-full"></div>
+                  <div className="absolute -top-2 w-11/12 h-1 bg-[#F7E07D] rounded-full left-1/2 transform -translate-x-1/2"></div>
+                </div>
+                
+                {/* Bucket Rim */}
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gradient-to-r from-[#F7E07D] to-[#F5C859] rounded-full"></div>
+                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-28 h-3 bg-[#140e0b] rounded-full"></div>
+              </div>
 
-              {/* Popping popcorn */}
+              {/* Floating Popcorns */}
               {[...Array(7)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="absolute"
                   style={{
-                    left: `${30 + (i % 3) * 25}%`,
-                    top: "0%",
+                    left: `${30 + (i % 3) * 20}%`,
+                    top: "10%",
                   }}
                   initial={{ y: 0, opacity: 0, scale: 0 }}
                   animate={{
@@ -82,9 +77,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               ))}
             </motion.div>
 
-            {/* Logo text */}
+            {/* Logo Text */}
             <motion.h1
-              className="text-3xl font-display font-bold text-gradient-popcorn text-center mt-6"
+              className="text-4xl md:text-5xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#F7E07D] to-[#F5C859]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.5 }}
@@ -92,25 +87,36 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               PopFolio
             </motion.h1>
 
-            {/* Loading indicator */}
-            <motion.div
-              className="flex justify-center gap-1 mt-4"
+            {/* Subtitle */}
+            <motion.p
+              className="mt-2 text-[#c6bb9a] text-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
+            >
+              Welcome Guys to My PopFolio
+            </motion.p>
+
+            {/* Loading Dots */}
+            <motion.div
+              className="flex justify-center gap-2 mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.6 }}
             >
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
-                  className="w-2 h-2 rounded-full bg-primary"
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#F7E07D] to-[#F5C859]"
                   animate={{
                     y: [0, -8, 0],
-                    opacity: [0.5, 1, 0.5],
+                    opacity: [0.6, 1, 0.6],
                   }}
                   transition={{
-                    duration: 0.6,
+                    duration: 1.2,
                     repeat: Infinity,
-                    delay: i * 0.15,
+                    delay: i * 0.2,
+                    ease: "easeInOut"
                   }}
                 />
               ))}

@@ -86,7 +86,7 @@ export default function HomePage() {
             </section>
 
             {/* Featured Projects Section */}
-            <section className="py-24 bg-[#140e0b]">
+            <section className="py-24 bg-[#140e0b]" id="projects">
                 <div className="container mx-auto px-4 ">
                     <motion.div
                         className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12"

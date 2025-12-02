@@ -2,9 +2,23 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FloatingPopcorn } from "../PopCornKernel";
 
 export default function HeroSection() {
+
+  const router = useRouter();
+
+  const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push('/#projects');
+    }
+  };
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
         
@@ -60,7 +74,8 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <Link
-              href="/projects"
+              href="#projects"
+              onClick={scrollToProjects}
               className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-medium rounded-full hover:opacity-90 transition-opacity shadow-md"
             >
               View My Work

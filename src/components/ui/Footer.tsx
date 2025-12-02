@@ -1,8 +1,9 @@
+"use client";
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -32,7 +33,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex justify-center gap-8 text-[#c6bb9a]">
-            {["Home", "Projects", "Contact"].map((link) => (
+            {["Home", "Contact"].map((link) => (
               <Link
                 key={link}
                 href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
@@ -80,5 +81,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
